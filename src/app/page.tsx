@@ -1,4 +1,9 @@
+import Navbar from "@/components/custom/Navbar";
 
-export default function Page() {
-  return <div></div>;
+export default function Home() {
+  return (
+    <div>
+      <Navbar />
+    </div>
+  );
 }
