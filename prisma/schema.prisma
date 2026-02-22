@@ -14,11 +14,115 @@ datasource db {
 }
 
 model User {
-  id           Int      @id @default(autoincrement())
-  userId       String
+  id Int @id @default(autoincrement())
+
+  userId       String  @unique
   name         String?
-  email        String   @unique
+  email        String  @unique
   profileImage String?
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
+
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+  localGoogleId    String?  @unique
+  googleResourceId String?  @unique
+
+  localGoogleCredentials LocalGoogleCredentials?
+  discordWebhooks        DiscordWebhook[]
+  slacks                 Slack[]
+  notions                Notion[]
+  connections            Connections[]
+  workflows              Workflows[]
+}
+
+model LocalGoogleCredentials {
+  id          String @id @default(uuid())
+  accessToken String @unique
+
+  folderId   String?
+  pageToken  String?
+  channelId  String  @unique @default(uuid())
+  subscribed Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  userId Int  @unique
+  user   User @relation(fields: [userId], references: [id])
+}
+
+model DiscordWebhook {
+  id        String @id @default(uuid())
+  webhooId  String @unique
+  url       String @unique
+  name      String
+  guildName String
+  guildId   String
+  channelId String
+  userId    String
+
+  user        User          @relation(fields: [userId], references: [userId])
+  connections Connections[]
+}
+
+model Slack {
+  id String @id @default(uuid())
+
+  appId            String
+  authedUserId     String
+  authedUserToken  String @unique
+  slackAccessToken String @unique
+  botUserId        String
+  teamId           String
+  teamName         String
+
+  userId      String
+  user        User          @relation(fields: [userId], references: [userId])
+  connections Connections[]
+}
+
+model Notion {
+  id String @id @default(uuid())
+
+  accessToken   String @unique
+  workspaceId   String @unique
+  databaseId    String @unique
+  workspaceName String
+  workspaceIcon String
+
+  userId      String
+  user        User          @relation(fields: [userId], references: [userId])
+  connections Connections[]
+}
+
+model Connections {
+  id               String          @id @default(uuid())
+  type             String
+  discordWebhookId String?
+  notionId         String?
+  slackId          String?
+  userId           String?
+  DiscordWebhook   DiscordWebhook? @relation(fields: [discordWebhookId], references: [id])
+  Notion           Notion?         @relation(fields: [notionId], references: [id])
+  Slack            Slack?          @relation(fields: [slackId], references: [id])
+  User             User?           @relation(fields: [userId], references: [userId])
+}
+
+model Workflows {
+  id                String   @id @default(uuid())
+  nodes             String?
+  edges             String?
+  name              String
+  discordTemplate   String?
+  notionTemplate    String?
+  slackTemplate     String?
+  slackChannels     String[]
+  slackAccessToken  String?
+  notionAccessToken String?
+  notionDbId        String?
+  flowPath          String?
+  cronPath          String?
+  publish           Boolean? @default(false)
+  description       String
+  userId            String
+  user              User     @relation(fields: [userId], references: [userId])
 }
