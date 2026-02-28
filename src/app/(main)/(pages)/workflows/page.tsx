@@ -1,3 +1,4 @@
+import WorkflowCard from "@/components/custom/WorkflowCard";
 import WorkFlowsButton from "@/components/custom/WorkFlowsButton";
 
 export default function WorkflowsPage() {
@@ -8,7 +9,42 @@ export default function WorkflowsPage() {
         <WorkFlowsButton />
       </div>
 
-      <div></div>
+      <div className="flex flex-col gap-y-2">
+        <WorkflowCard
+          name="automation workflow"
+          description="creating a test workflow"
+          id="111"
+          publish={false}
+        />
+
+        <WorkflowCard
+          name="automation workflow"
+          description="creating a test workflow"
+          id="111"
+          publish={false}
+        />
+
+        <WorkflowCard
+          name="automation workflow"
+          description="creating a test workflow"
+          id="111"
+          publish={false}
+        />
+
+        <WorkflowCard
+          name="automation workflow"
+          description="creating a test workflow"
+          id="111"
+          publish={false}
+        />
+
+        <WorkflowCard
+          name="automation workflow"
+          description="creating a test workflow"
+          id="111"
+          publish={false}
+        />
+      </div>
     </div>
   );
 }
