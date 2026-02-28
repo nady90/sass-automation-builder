@@ -10,6 +10,7 @@ import {
 import Link from "next/link";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { cn } from "@/lib/utils";
+import { Home01Icon } from "@hugeicons/core-free-icons";
 
 export default function Sidebar() {
   const pathname = usePathname();
@@ -17,9 +18,16 @@ export default function Sidebar() {
 
   return (
     <div className="p-5 border-r border-gray-300">
-      <ul className="flex flex-col items-center gap-y-4">
+      <ul className="flex flex-col items-center gap-y-8">
         <li>
-          <Link href={"/"}>HOME</Link>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Link href={"/"}>
+                <HugeiconsIcon className="text-blue-500" icon={Home01Icon} />
+              </Link>
+            </TooltipTrigger>
+            <TooltipContent side="right">Home</TooltipContent>
+          </Tooltip>
         </li>
         {MENU_OPTIONS.map((option, index) => {
           return (

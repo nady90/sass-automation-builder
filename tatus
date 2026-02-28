@@ -1,0 +1,77 @@
+[33mcommit ebd9810a059085f4c4e56657e29795c450e97651[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: Abanoub <naguib.abanoub@gmail.com>
+Date:   Sat Feb 28 20:16:43 2026 +0200
+
+    chore: add todo comment
+
+[33mcommit 1a6a5f391e1802d3f55699e383c604473a7406cf[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Abanoub <naguib.abanoub@gmail.com>
+Date:   Sat Feb 28 20:10:43 2026 +0200
+
+    feat: finish the settings page with all the required auth and database dependencies
+
+[33mcommit 208a2ae9f87e7087459c07fa86ee2c43d51f6b05[m
+Author: Abanoub <naguib.abanoub@gmail.com>
+Date:   Tue Feb 24 22:10:02 2026 +0200
+
+    feat: implemented the first skeleton for the settings page
+
+[33mcommit dcb25b3a94a0bca7d28830f406a57834763138f5[m
+Author: Abanoub <naguib.abanoub@gmail.com>
+Date:   Mon Feb 23 01:08:37 2026 +0200
+
+    feat(database): implement the rest of the schema
+
+[33mcommit 19696b56971763b92f8c05f1a4413396b7f9b93a[m
+Author: Abanoub <naguib.abanoub@gmail.com>
+Date:   Mon Feb 23 00:38:07 2026 +0200
+
+    feat(database): add the user model
+
+[33mcommit 7b5900966d647787608e3eb327089613b7d3082a[m
+Author: Abanoub <naguib.abanoub@gmail.com>
+Date:   Fri Feb 20 01:06:33 2026 +0200
+
+    feat: add the database
+
+[33mcommit eec6d77b391286c6571fb0e0be2ff03659bcd000[m
+Author: Abanoub <naguib.abanoub@gmail.com>
+Date:   Thu Feb 19 23:09:19 2026 +0200
+
+    chore: add home page link to sidebar
+
+[33mcommit a5fb6ba5cf14855a074c9fddb6569c09e78ffa8b[m
+Author: Abanoub <naguib.abanoub@gmail.com>
+Date:   Thu Feb 19 22:57:07 2026 +0200
+
+    feat: implemented the clerk auth
+
+[33mcommit bf5fefba448129bd42642f6736e443289125d370[m
+Author: Abanoub <naguib.abanoub@gmail.com>
+Date:   Thu Feb 19 22:36:21 2026 +0200
+
+    feat: add first skeleton for the app
+
+[33mcommit 60c72c8a17bfeb647610308f0a754dc5d1f56c9a[m
+Author: Abanoub <naguib.abanoub@gmail.com>
+Date:   Mon Feb 9 19:49:38 2026 +0200
+
+    feat: add 3d card effect from aceternity ui
+
+[33mcommit 103253fc8723552a95f5e01d36f3215ec3b25a08[m
+Author: Abanoub <naguib.abanoub@gmail.com>
+Date:   Mon Feb 9 19:38:52 2026 +0200
+
+    build: add npmr to enforce the use of pnpm
+
+[33mcommit 501abb42b44d83141edcb3cac2f2f9d905888542[m
+Author: Abanoub <naguib.abanoub@gmail.com>
+Date:   Mon Feb 9 19:38:29 2026 +0200
+
+    feat: install shadcn
+
+[33mcommit 1fb267cdeb56f3ed50840457a22e582a7d07c547[m
+Author: Abanoub <naguib.abanoub@gmail.com>
+Date:   Sat Feb 7 01:37:22 2026 +0200
+
+    Initial commit from Create Next App
