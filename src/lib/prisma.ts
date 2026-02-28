@@ -2,23 +2,16 @@
 // IMPORT IMPORTANCE: Point to 'client', not 'index.js'
 import { PrismaClient } from "@/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
-import { Pool } from "pg";
-
-const connectionString = process.env.DATABASE_URL;
-
-// 1. Create the Pool and Adapter
-const pool = new Pool({ connectionString });
-const adapter = new PrismaPg(pool);
-
-// 2. Singleton Function
-const prismaClientSingleton = () => {
-  return new PrismaClient({ adapter });
+const globalForPrisma = global as unknown as {
+  prisma: PrismaClient;
 };
-
-// 3. Global Object Handling (prevents hot-reload crashes)
-const globalForPrisma = global;
-// @ts-expect-error From the docs
-const prisma = globalForPrisma.prisma || prismaClientSingleton();
-export default prisma;
-// @ts-expect-error From the docs
+const adapter = new PrismaPg({
+  connectionString: process.env.DATABASE_URL,
+});
+const prisma =
+  globalForPrisma.prisma ||
+  new PrismaClient({
+    adapter,
+  });
 if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
+export default prisma;

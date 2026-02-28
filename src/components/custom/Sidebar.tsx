@@ -17,7 +17,7 @@ export default function Sidebar() {
 
   return (
     <div className="p-5 border-r border-gray-300">
-      <ul className="flex flex-col gap-y-4">
+      <ul className="flex flex-col items-center gap-y-4">
         <li>
           <Link href={"/"}>HOME</Link>
         </li>
