@@ -144,6 +144,8 @@ function ProfileForm() {
     updateUserName(user.id, data.name);
   }
 
+  // FIX: I am always getting the name from Clerk which never changes
+  // I need to get it from my database
   useEffect(() => {
     form.reset({
       name: user?.firstName || "",
