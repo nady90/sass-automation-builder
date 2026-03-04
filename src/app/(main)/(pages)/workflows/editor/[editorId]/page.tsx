@@ -16,7 +16,9 @@ export default async function EditorPage({
   return (
     <div className="h-full">
       <EditorProvider>
-        <ConnectionsProvider></ConnectionsProvider>
+        <ConnectionsProvider>
+          <div></div>
+        </ConnectionsProvider>
       </EditorProvider>
     </div>
   );
