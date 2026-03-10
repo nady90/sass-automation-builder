@@ -12,5 +12,5 @@ const selector = (s: any) => ({
 export default function CustomHandle(props: Props) {
   const { state, dispatch } = useEditor();
 
-  return <Handle {...props} />;
+  return <Handle {...props} className="-bottom-2! h-4! w-4! bg-black" />;
 }
