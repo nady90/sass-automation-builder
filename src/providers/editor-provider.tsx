@@ -144,5 +144,5 @@ export const useEditor = () => {
     throw new Error(
       "Did you wrap the component in the editor provider context?",
     );
-  return EditorContext;
+  return context;
 };

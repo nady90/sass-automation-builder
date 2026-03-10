@@ -1,3 +1,4 @@
+import EditorCanvas from "@/components/custom/EditorCanvas";
 import ConnectionsProvider from "@/providers/connections-provider";
 import EditorProvider from "@/providers/editor-provider";
 
@@ -17,7 +18,9 @@ export default async function EditorPage({
     <div className="h-full">
       <EditorProvider>
         <ConnectionsProvider>
-          <div></div>
+          <div className="w-full h-full">
+            <EditorCanvas title="s" />
+          </div>
         </ConnectionsProvider>
       </EditorProvider>
     </div>

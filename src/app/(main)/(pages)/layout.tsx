@@ -8,7 +8,7 @@ export default async function PagesLayout({ children }: Props) {
   return (
     <div className="flex flex-row w-full h-screen">
       <Sidebar />
-      <div>{children}</div>
+      <div className="grow">{children}</div>
     </div>
   );
 }
